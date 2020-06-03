@@ -1,38 +1,88 @@
-.dropdown-check-list {
-  display: inline-block;
+*{
+    margin: 0;
+    padding: 0;
 }
-.dropdown-check-list .anchor {
+
+.container 
+{
+  width: 500px;
+  background-color: aqua;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu
+{
+  border-radius: 8px;
+  width: 300px;
+  overflow: hidden;
+  margin: auto;
+}
+.menu li {
+    list-style: none;   
+    
+}
+.menu a {
+  text-decoration: none;
+}
+.item
+{
+  border-top: 1px solid #b92d2d;
+}
+.btn
+{
+  display: block;
+  padding: 16px 20px;
+  background-color: rgb(200, 22, 22);
+  color: #ffffff;
   position: relative;
-  cursor: pointer;
-  display: inline-block;
-  padding: 5px 50px 5px 10px;
-  border: 1px solid #ccc;
 }
-.dropdown-check-list .anchor:after {
-  position: absolute;
+.btn:before
+{ 
   content: "";
-  border-left: 2px solid black;
-  border-top: 2px solid black;
-  padding: 5px;
-  right: 10px;
-  top: 20%;
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: rgb(200, 22, 22);
+  left: 20px;
+  bottom: -7px;
+  transform: rotate(45deg);
 }
-.dropdown-check-list .anchor:active:after {
-  right: 8px;
-  top: 21%;
+.smenu
+{
+  background-color: #333;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+
 }
-.dropdown-check-list ul.items {
-  padding: 2px;
-  display: none;
-  margin: 0;
-  border: 1px solid #ccc;
-  border-top: none;
+.smenu a
+{
+  display: block;
+  padding: 16px 26px;
+  color: #ffffff;
+  font-size: 14px ;
+  margin: 4px 0;
+  position: relative;
 }
-.dropdown-check-list ul.items li {
-  list-style: none;
+.smenu a:before
+{
+   content: "";
+  position: absolute;
+   width: 6px;
+   height: 100%;
+   background-color: rgb(200, 22, 22);
+   left: 0;
+   top: 0;
+   opacity: 0;
+
+}
+.smenu a:hover:before
+{
+  opacity: 1;
+}
+.item:target .smenu{
+    max-height: 10em;
 }
